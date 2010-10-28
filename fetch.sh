@@ -2,7 +2,14 @@
 
 CURL="curl -s"
 
-CODEGC=http://code.google.com/p/oplop/source/browse/AppEngine/static
+CODEGC=http://oplop.googlecode.com/hg
+CODEGCFILES="
+HTML5/index.css
+HTML5/hvga.css
+AppEngine/static/website.css
+AppEngine/static/website.js
+AppEngine/static/jquery.js
+"
 
 fetch () {
     typeset URL=$1
@@ -11,7 +18,7 @@ fetch () {
     echo ok
 }
 
-for FILE in website.css jquery.js website.js; do
+for FILE in ${CODEGCFILES}; do
     fetch "${CODEGC}/${FILE}" -O
 done
 fetch https://oplop.appspot.com/ -o index.html 
