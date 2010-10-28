@@ -4,6 +4,8 @@ CURL="curl -s"
 
 CODEGC=http://oplop.googlecode.com/hg
 CODEGCFILES="
+JavaScript/md5.js
+JavaScript/oplop.js
 HTML5/index.css
 HTML5/hvga.css
 AppEngine/static/website.css
@@ -18,7 +20,16 @@ fetch () {
     echo ok
 }
 
+PATTERN="*"
+if [ -n "$1" ]; then
+    PATTERN=$1
+fi
+
 for FILE in ${CODEGCFILES}; do
-    fetch "${CODEGC}/${FILE}" -O
+    case "${FILE}" in
+        ${PATTERN}) fetch "${CODEGC}/${FILE}" -O;;
+    esac
 done
-fetch https://oplop.appspot.com/ -o index.html 
+case index.html in 
+    ${PATTERN}) fetch https://oplop.appspot.com/ -o index.html;;
+esac
