@@ -33,3 +33,6 @@ done
 case index.html in 
     ${PATTERN}) fetch https://oplop.appspot.com/ -o index.html;;
 esac
+case bookmark_bubble.js in
+	${PATTERN}) fetch http://mobile-bookmark-bubble.googlecode.com/hg/bookmark_bubble.js -o bookmark_bubble.js;;
+esac
