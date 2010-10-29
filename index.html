@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en" 
+    manifest="/cache.manifest"
+>
+    <head>
+        <title>Oplop</title>
+        <meta charset="UTF-8">
+
+        
+    <meta name="google-site-verification"
+        content="i7sXXgwKalTI9svaooYDLi2RjZrwJij8xPjsKFYshEc">
+
+    <!-- Force iOS to not start zoomed out at 980px. -->
+    <meta name="viewport" content="width=device-width">
+    <!-- iOS full-screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- iOS Web clip icon; default is /apple-touch-icon-precomposed.png -->
+    <link rel="apple-touch-icon-precomposed" href="static/icon057.png" />
+
+    <link rel="icon" type="image/png" href="static/icon016.png">
+
+    <!-- Force IE 7/8 to render the page (somewhat) properly. -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+        
+    <link rel=stylesheet href="./css/index.css">
+    <link rel=stylesheet href="./css/website.css">
+    <link rel=stylesheet href="./css/hvga.css">
+
+
+        
+    
+        <script src="./js/jquery.js"></script>
+        <script src="./js/md5.js"></script>
+        <script src="./js/oplop.js"></script>
+        <script src="./js/website.js"></script>
+    
+
+    </head>
+    <body onload="">
+        <noscript>Oplop requires JavaScript</noscript>
+
+        <section id="nicknameSection">
+            <h2>
+                <label for="nickname">
+                    <span class="widthToSpare">1. Type a</span> nickname
+                </label>
+            </h2>
+
+            <p><input id="nickname" type=text required
+                placeholder="Nickname" autofocus></p>
+            <p class="note">
+                <a href="http://code.google.com/p/oplop/wiki/HowItWorks"
+                    target="_blank">E.g.</a>
+                <span style="font-style: italic;">
+                    Amazon, AMZN, or bookstore</span>
+            </p>
+        </section>
+
+        <section id="masterPasswordSection">
+            <h2>
+                <label for="masterPassword">
+                    <span class="widthToSpare">2. Type your</span>
+                    master password
+                </label>
+            </h2>
+
+            <p><input id="masterPassword" type=password required
+                placeholder="Master password"></p>
+            <p><span id="newNickname">
+                <input id="isNewNickname" type=checkbox>
+                <label for="isNewNickname">
+                    Validate master password?
+                </label>
+            </span>
+            <input id="validateMasterPassword" type=password
+                placeholder="Validate master password"></p>
+        </section>
+
+        <section id="accountPasswordSection">
+            <h2>
+                <label for="accountPassword">
+                    <span class="widthToSpare">Your</span>
+                    account password
+                </label>
+            </h2>
+
+            <p><input id="createAccountPassword" value="Create" type=button></p>
+
+            
+    <p><input id="accountPassword" type=text autocomplete=off></p>
+    <p class="note">
+        For security purposes, it is recommended that you cut-and-paste your account password instead of copy-and-paste.
+    </p>
+
+        </section>
+
+        
+    <footer class="heightToSpare">
+        <p id="infoLinks">
+            <a href="http://code.google.com/p/oplop/wiki/HowItWorks"
+                target="_blank">How This Works</a>
+        </p>
+    </footer>
+
+    <script
+        src="./js/bookmark_bubble.js">
+    </script>
+    <script>
+        // Turn off iOS auto formatting; using jQuery doesn't seem to work.
+        var nodes = [document.getElementById("nickname"),
+                     document.getElementById("masterPassword"),
+                     document.getElementById("validateMasterPassword"),
+                     document.getElementById("accountPassword")];
+        for (var x=0; x < nodes.length; x+=1) {
+            nodes[x].setAttribute("autocapitalize", "off");
+            nodes[x].setAttribute("autocorrect", "off");
+        }
+
+        if (typeof(google) != "undefined" && google.bookmarkbubble) {
+            var bubble = new google.bookmarkbubble.Bubble();
+            var parameter = 'bmb=1';
+
+            bubble.hasHashParameter = function() {
+                return window.location.hash.indexOf(parameter) != -1;
+            };
+
+            bubble.setHashParameter = function() {
+                if (!this.hasHashParameter()) {
+                    window.location.hash += parameter;
+                }
+            };
+
+            bubble.showIfAllowed();
+        }
+    </script>
+
+    </body>
+</html>

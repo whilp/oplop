@@ -1,0 +1,14 @@
+@import url("index.css");
+
+footer {
+    display: block;
+    width: 100%;
+    border-top: 1px solid LightSteelBlue;
+    margin-top: 1em;
+}
+
+#infoLinks {
+    margin-top: 0.2em;
+    text-align: right;
+}
+
