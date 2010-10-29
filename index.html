@@ -43,6 +43,20 @@
     <body onload="">
         <noscript>Oplop requires JavaScript</noscript>
 
+        <section id="forkWarning">
+            <h2>
+                <span class="widthToSpare">WARNING:</span>
+            </h2>
+
+            <p>This is a (slightly) forked version of the
+            <a href="http://code.google.com/p/oplop/"
+                target="_blank">real Oplop</a>. Use at your own risk. Code
+            for this modified version is available at
+            <a href="http://github.com/wcmaier/oplop/"
+                target="_blank">github</a> and
+            <a href="http://bitbucket.org/wcmaier/oplop/">bitbucket</a>.</p>
+        </section>
+
         <section id="nicknameSection">
             <h2>
                 <label for="nickname">
@@ -53,10 +67,6 @@
             <p><input id="nickname" type=text required
                 placeholder="Nickname" autofocus></p>
             <p class="note">
-                <a href="http://code.google.com/p/oplop/wiki/HowItWorks"
-                    target="_blank">E.g.</a>
-                <span style="font-style: italic;">
-                    Amazon, AMZN, or bookstore</span>
             </p>
         </section>
 
@@ -70,14 +80,6 @@
 
             <p><input id="masterPassword" type=password required
                 placeholder="Master password"></p>
-            <p><span id="newNickname">
-                <input id="isNewNickname" type=checkbox>
-                <label for="isNewNickname">
-                    Validate master password?
-                </label>
-            </span>
-            <input id="validateMasterPassword" type=password
-                placeholder="Validate master password"></p>
         </section>
 
         <section id="accountPasswordSection">

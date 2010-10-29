@@ -42,7 +42,7 @@ oplop.latin1_to_utf8_ = function latin1_to_utf8(text) {
     @return {!string} Account password.
 */
 oplop.accountPassword = function(nickname, master) {
-    var length = 8;
+    var length = 20;
     var utf8_master = oplop.latin1_to_utf8_(master);
     var utf8_nickname = oplop.latin1_to_utf8_(nickname);
 
